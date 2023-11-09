@@ -37,7 +37,7 @@ const ShowPosts = () => {
 
   const loadPosts = () => {
     axios
-      .get("http://localhost:5000/Post")
+      .get("http://ctc-website-server-api/Post")
       .then((response) => {
         setPosts(response.data.data);
         setLikes(response.data.likes || {});
