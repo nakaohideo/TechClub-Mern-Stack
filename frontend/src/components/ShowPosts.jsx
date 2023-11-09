@@ -57,7 +57,7 @@ const ShowPosts = () => {
   // Function to handle commenting on a post
   const handleComment = (postId, commentText) => {
     axios
-      .post(`http://localhost:5000/Post/${postId}/comment`, {
+      .post(`http://ctc-website-server-api/Post/${postId}/comment`, {
         text: commentText,
       })
       .then((response) => {
