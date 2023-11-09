@@ -1,21 +1,11 @@
-/** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./src/**/*.{js,ts,jsx,tsx}"],
+  content: ["./src/**/*.{html,js,jsx}"],
   theme: {
     extend: {
-      keyframes: {
-        animate: {
-          "0%,10%,100%": {
-            width: "0%",
-          },
-          "70%,80%,90%": {
-            width: "100%",
-          },
-        },
+      fontFamily: {
+        poppins: ["Poppins", "sans", ],
+        mine:["mine",'sans'],
       },
-    },
-    animation: {
-      animate: "animate 2s linear infinite",
     },
   },
   plugins: [],

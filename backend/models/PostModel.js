@@ -11,8 +11,24 @@ const PostSchema = mongoose.Schema(
       required: true,
     },
     image: {
-      type: String, // Change the type to String
+      type: String,
       required: false,
+    },
+    comments: [
+      {
+        text: {
+          type: String,
+          required: false,
+        },
+        user: {
+          type: String,
+          default: "Anonymous", // Set default username to "Anonymous" for comments
+        },
+      },
+    ],
+     likes: {
+      type: Number, // Change "likes" type to Number
+      default: 0, // Set the default number of likes to 0
     },
   },
   {

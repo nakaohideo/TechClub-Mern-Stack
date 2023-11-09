@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+    font-family: 'mine';
+    src: url(./components/Fonts/mine.woff) format(woff2);
+    font-weight: lighter;
+}

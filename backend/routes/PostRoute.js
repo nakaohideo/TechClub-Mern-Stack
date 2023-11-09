@@ -97,4 +97,84 @@ router.delete("/:id", async (request, response) => {
   }
 });
 
+// Create a new comment for a post
+router.post("/:id/comment", async (request, response) => {
+  try {
+    const postId = request.params.id;
+    const comment = {
+      text: request.body.text, // The comment text
+      user: request.body.user, // The username of the commenter
+    };
+
+    const post = await Post.findById(postId);
+
+    if (!post) {
+      return response.status(404).json({ message: "Post not found" });
+    }
+
+    post.comments.push(comment);
+    await post.save();
+
+    return response.status(201).json(post.comments);
+  } catch (error) {
+    console.log(error.message);
+    response.status(500).send({ message: error.message });
+  }
+});
+
+// Like a post
+router.post("/:id/like", async (request, response) => {
+  try {
+    const postId = request.params.id;
+
+    const post = await Post.findById(postId);
+
+    if (!post) {
+      return response.status(404).json({ message: "Post not found" });
+    }
+
+    // Increment the likes count by 1
+    post.likes = (post.likes || 0) + 1;
+
+    await post.save();
+
+    return response.status(200).json({ likes: post.likes });
+  } catch (error) {
+    console.log(error.message);
+    response.status(500).send({ message: error.message });
+  }
+});
+
+
+// Route for deleting a comment
+router.delete("/:postId/comment/:commentIndex", async (request, response) => {
+  try {
+    const postId = request.params.postId;
+    const commentIndex = request.params.commentIndex;
+
+    const post = await Post.findById(postId);
+
+    if (!post) {
+      return response.status(404).json({ message: "Post not found" });
+    }
+
+    if (commentIndex < 0 || commentIndex >= post.comments.length) {
+      return response.status(400).json({ message: "Invalid comment index" });
+    }
+
+    // Remove the comment at the specified index
+    post.comments.splice(commentIndex, 1);
+
+    await post.save();
+
+    return response.status(200).json({ message: "Comment deleted successfully" });
+  } catch (error) {
+    console.log(error.message);
+    response.status(500).send({ message: error.message });
+  }
+});
+
+
+
+
 export default router;
