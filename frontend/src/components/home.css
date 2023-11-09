@@ -1,4 +1,4 @@
-.bg{
-    transform: rotateY(180deg);
-    filter: blur(2px);
+.bg {
+  transform: rotateY(180deg);
+  /* filter: blur(2px);  */
 }

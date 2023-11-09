@@ -1,0 +1,35 @@
+/* .animate {
+  animation: bg 15s ease infinite;
+  filter: blur(5px);
+  width: fit-content;
+}
+
+@keyframes bg {
+  0%,
+  100% {
+    transform: translateY(0) translateX(0);
+  }
+  50% {
+    transform: translateY(100%) translateX(100%);
+  }
+}
+
+.animatetwo {
+  animation: bgt 15s ease infinite;
+  filter: blur(5px);
+  width: fit-content;
+}
+
+@keyframes bgt {
+  0%,
+  100% {
+    transform: translateY(30%) translateX(30%);
+  }
+  50% {
+    transform: translateY(-70%) translateX(-70%);
+  }
+}
+
+img {
+  width: 200px;
+} */

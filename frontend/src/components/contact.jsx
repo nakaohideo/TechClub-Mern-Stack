@@ -28,7 +28,7 @@ const PhoneButton = () => {
 
 const EmailButton = () => {
   const handleEmailClick = () => {
-    window.location.href = "mailto:sebilaidevelopers@gmail.com";
+    window.location.href = "mailto:computertech.club300@gmail.com";
   };
 
   return (
@@ -37,7 +37,7 @@ const EmailButton = () => {
       onClick={handleEmailClick}
     >
       <FaEnvelope className="contact-icon" />
-      <span>sebilaidevelopers@gmail.com</span>
+      <span>computertech.club300@gmail.com</span>
     </button>
   );
 };
@@ -53,7 +53,7 @@ const LocationButton = () => {
       onClick={handleLocationClick}
     >
       <FaMapMarker className="contact-icon" />
-      <span>AA CMC Dan Energy Research & Developmet PLC</span>
+      <span>Robe Bale, Madda Walabu University</span>
     </button>
   );
 };
@@ -141,11 +141,11 @@ function ContactForm() {
         <div className="bg-white p-5 rounded-lg shadow-md">
           <img
             src={CTC}
-            alt="Sebil AI"
+            alt="CTC"
             className="w-40 h-25 rounded-full mb-4 mx-auto "
           />
           <h1 className="text-2xl font-bold mb-4 text-center capitalize">
-            Share your comment or idea on Sebil AI
+            Share your comment or idea to CTC Team
           </h1>
           <form onSubmit={handleSubmit}>
             <div className="mb-4">
@@ -202,7 +202,7 @@ function ContactForm() {
                 {/*header*/}
                 <div className="flex items-center justify-center m-auto p-5 border-b border-solid border-slate-200 rounded-t">
                   <h3 className="text-3xl text-center text-[#396E8D] font-bold">
-                    SebilAi
+                    CTC
                   </h3>
                   <button
                     className="p-1 ml-auto bg-transparent border-0 text-black opacity-5 float-right text-3xl leading-none font-semibold outline-none focus:outline-none"
