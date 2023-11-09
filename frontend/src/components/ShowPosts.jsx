@@ -18,7 +18,7 @@ const ShowPosts = () => {
   // Function to handle liking a post
   const handleLike = (postId) => {
     axios
-      .post(`http://ctc-website-server-api/Post/${postId}/like`)
+      .post(`https://ctc-website-server-api.onrender.com/Post/${postId}/like`)
       .then(() => {
         loadPosts(); // Reload posts after liking a post
       })
@@ -37,7 +37,7 @@ const ShowPosts = () => {
 
   const loadPosts = () => {
     axios
-      .get("http://ctc-website-server-api/Post")
+      .get("https://ctc-website-server-api.onrender.com/Post")
       .then((response) => {
         setPosts(response.data.data);
         setLikes(response.data.likes || {});
@@ -57,9 +57,12 @@ const ShowPosts = () => {
   // Function to handle commenting on a post
   const handleComment = (postId, commentText) => {
     axios
-      .post(`http://ctc-website-server-api/Post/${postId}/comment`, {
-        text: commentText,
-      })
+      .post(
+        `https://ctc-website-server-api.onrender.com/Post/${postId}/comment`,
+        {
+          text: commentText,
+        }
+      )
       .then((response) => {
         const updatedPosts = posts.map((p) =>
           p._id === postId
