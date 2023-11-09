@@ -4,8 +4,6 @@ import Main from "./Asset/main.png";
 import course from "./Asset/course.png";
 import window from "./Asset/window.png";
 import Icons from "./Asset/icons.png";
-import Dot from "./Asset/dot.png";
-import Bob from "./Asset/bob.svg";
 import Footer from "./Footer";
 import "./animate.css";
 function HomeNext() {
