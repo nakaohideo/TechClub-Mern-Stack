@@ -18,7 +18,7 @@ const ShowPosts = () => {
   // Function to handle liking a post
   const handleLike = (postId) => {
     axios
-      .post(`http://localhost:5000/Post/${postId}/like`)
+      .post(`http://ctc-website-server-api/Post/${postId}/like`)
       .then(() => {
         loadPosts(); // Reload posts after liking a post
       })
