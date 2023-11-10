@@ -75,6 +75,16 @@ const NavigationBar = () => {
             >
               FAQ
             </NavLink>
+            <NavLink
+              to="/login"
+              className={`relative w-fit text-white block font-semibold after:block after:content-[''] after:absolute after:h-[2px] after:bg-white after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-left ${
+                location.pathname === "/login"
+                  ? "text-blue-[#396E8D] border-b-2  border-white"
+                  : "opacity-100"
+              }`}
+            >
+              Login
+            </NavLink>
           </div>
         </div>
 
@@ -162,6 +172,13 @@ const NavigationBar = () => {
               onClick={handleLinkClick} // Close the menu when the link is clicked
             >
               FAQ
+            </NavLink>
+            <NavLink
+              to="/login"
+              className={`relative text-white block font-semibold ...`}
+              onClick={handleLinkClick} // Close the menu when the link is clicked
+            >
+              Login
             </NavLink>
           </div>
         </div>
