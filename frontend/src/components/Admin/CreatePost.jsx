@@ -36,14 +36,14 @@ const CreatePosts = () => {
   };
 
   return (
-    <div className="w-6/12 m-auto">
+    <div className="m-auto p-4">
       <div className="p-4">
         {/* <BackButton /> */}
         <h1 className="text-3xl my-4 font-poppins font-bold text-center">
           Create Post
         </h1>
         {loading ? <Spinner /> : ""}
-        <div className="flex flex-col border-2 border-sky-400 rounded-xl w-[600px] p-4 mx-auto">
+        <div className="flex flex-col border-2 border-sky-400 rounded-xl lg:w-[600px] p-4 mx-auto">
           <div className="my-4">
             <label className="text-xl mr-4 text-gray-500">Image URL</label>
             <input
