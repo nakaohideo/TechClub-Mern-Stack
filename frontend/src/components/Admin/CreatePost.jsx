@@ -36,50 +36,52 @@ const CreatePosts = () => {
   };
 
   return (
-    <div className="p-4">
-      {/* <BackButton /> */}
-      <h1 className="text-3xl my-4 font-poppins font-bold text-center">
-        Create Post
-      </h1>
-      {loading ? <Spinner /> : ""}
-      <div className="flex flex-col border-2 border-sky-400 rounded-xl w-[600px] p-4 mx-auto">
-        <div className="my-4">
-          <label className="text-xl mr-4 text-gray-500">Image URL</label>
-          <input
-            type="url"
-            value={image}
-            onChange={(e) => setimage(e.target.value)}
-            className="border-2 border-gray-500 px-4 py-2  w-full"
-            placeholder="Enter Image URL"
-          />
+    <div className="w-6/12 m-auto">
+      <div className="p-4">
+        {/* <BackButton /> */}
+        <h1 className="text-3xl my-4 font-poppins font-bold text-center">
+          Create Post
+        </h1>
+        {loading ? <Spinner /> : ""}
+        <div className="flex flex-col border-2 border-sky-400 rounded-xl w-[600px] p-4 mx-auto">
+          <div className="my-4">
+            <label className="text-xl mr-4 text-gray-500">Image URL</label>
+            <input
+              type="url"
+              value={image}
+              onChange={(e) => setimage(e.target.value)}
+              className="border-2 border-gray-500 px-4 py-2  w-full"
+              placeholder="Enter Image URL"
+            />
+          </div>
+          <div className="my-4">
+            <label className="text-xl mr-4 text-gray-500">Title</label>
+            <input
+              type="text"
+              value={title}
+              onChange={(e) => setTitle(e.target.value)}
+              className="border-2 border-gray-500 px-4 py-2 w-full"
+            />
+          </div>
+          <div className="my-4">
+            <label className="text-xl mr-4 text-gray-500">content</label>
+            <textarea
+              value={content}
+              onChange={(e) => setcontent(e.target.value)}
+              style={{
+                border: "2px solid gray",
+                padding: "8px",
+                width: "100%",
+                resize: "none",
+                height: "200px",
+                whiteSpace: "pre-wrap",
+              }}
+            />
+          </div>
+          <button className="p-2 bg-sky-300 m-8" onClick={handleSavePost}>
+            Post
+          </button>
         </div>
-        <div className="my-4">
-          <label className="text-xl mr-4 text-gray-500">Title</label>
-          <input
-            type="text"
-            value={title}
-            onChange={(e) => setTitle(e.target.value)}
-            className="border-2 border-gray-500 px-4 py-2 w-full"
-          />
-        </div>
-        <div className="my-4">
-          <label className="text-xl mr-4 text-gray-500">content</label>
-          <textarea
-            value={content}
-            onChange={(e) => setcontent(e.target.value)}
-            style={{
-              border: "2px solid gray",
-              padding: "8px",
-              width: "100%",
-              resize: "none",
-              height: "200px",
-              whiteSpace: "pre-wrap",
-            }}
-          />
-        </div>
-        <button className="p-2 bg-sky-300 m-8" onClick={handleSavePost}>
-          Post
-        </button>
       </div>
     </div>
   );
