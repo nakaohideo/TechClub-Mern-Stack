@@ -64,35 +64,36 @@ const EditPost = () => {
   };
 
   return (
-    <div className="p-4 h-screen w-10/12 m-auto">
-      <h1 className="text-3xl my-4 font-poppins font-bold text-center">
-        Edit Post
-      </h1>
-      {loading ? (
-        <div className="text-center">Loading...</div>
-      ) : (
-        <div className="flex flex-col border-2 border-sky-400 rounded-xl w-fit p-4 mx-auto">
-          <div className="my-4">
-            <label className="text-xl mr-4 text-gray-500">Title</label>
-            <input
-              type="text"
-              name="title"
-              value={post.title}
-              onChange={handleInputChange}
-              className="border-2 border-gray-500 px-4 py-2 w-full"
-            />
-          </div>
-          <div className="my-4">
-            <label className="text-xl mr-4 text-gray-500">Content</label>
-            <textarea
-              type="text"
-              name="content"
-              value={post.content}
-              onChange={handleInputChange}
-              className="border-2 h-[200px]  border-gray-500 px-4 py-2 w-full resize-none"
-            />
+    <div className="h-screen w-10/12 m-auto">
+      <div className="p-4 w-full">
+        <h1 className="text-3xl my-4 font-poppins font-bold text-center">
+          Edit Post
+        </h1>
+        {loading ? (
+          <div className="text-center">Loading...</div>
+        ) : (
+          <div className="flex flex-col border-2 border-sky-400 rounded-xl w-fit p-4 mx-auto">
+            <div className="my-4">
+              <label className="text-xl mr-4 text-gray-500">Title</label>
+              <input
+                type="text"
+                name="title"
+                value={post.title}
+                onChange={handleInputChange}
+                className="border-2 border-gray-500 px-4 py-2 w-full"
+              />
+            </div>
+            <div className="my-4">
+              <label className="text-xl mr-4 text-gray-500">Content</label>
+              <textarea
+                type="text"
+                name="content"
+                value={post.content}
+                onChange={handleInputChange}
+                className="border-2 h-[200px]  border-gray-500 px-4 py-2 w-full resize-none"
+              />
 
-            {/* <textarea
+              {/* <textarea
               value={post.content}
               onChange={handleInputChange}
               style={{
@@ -103,32 +104,33 @@ const EditPost = () => {
                 height: "200px",
               }}
             /> */}
+            </div>
+            <div className="my-4">
+              <label className="text-xl mr-4 text-gray-500">Image URL</label>
+              <input
+                type="url"
+                name="image"
+                value={post.image}
+                onChange={handleInputChange}
+                className="border-2 border-gray-500 px-4 py-2 w-full"
+                placeholder="Enter Image URL"
+              />
+            </div>
+            <button className="p-2 bg-sky-300 m-4" onClick={handleUpdatePost}>
+              Update
+            </button>
+            <button
+              className="p-2 bg-red-500 text-white m-4"
+              onClick={handleDeletePost}
+            >
+              Delete
+            </button>
+            <Link to="/edit" className="text-blue-500 underline">
+              Back to Posts
+            </Link>
           </div>
-          <div className="my-4">
-            <label className="text-xl mr-4 text-gray-500">Image URL</label>
-            <input
-              type="url"
-              name="image"
-              value={post.image}
-              onChange={handleInputChange}
-              className="border-2 border-gray-500 px-4 py-2 w-full"
-              placeholder="Enter Image URL"
-            />
-          </div>
-          <button className="p-2 bg-sky-300 m-4" onClick={handleUpdatePost}>
-            Update
-          </button>
-          <button
-            className="p-2 bg-red-500 text-white m-4"
-            onClick={handleDeletePost}
-          >
-            Delete
-          </button>
-          <Link to="/edit" className="text-blue-500 underline">
-            Back to Posts
-          </Link>
-        </div>
-      )}
+        )}
+      </div>
     </div>
   );
 };
