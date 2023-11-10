@@ -138,7 +138,7 @@ const ShowPosts = () => {
         Admin News Page
       </h1>
       {loading ? (
-        <div className="text-center">Loading...</div>
+        <div className="text-center h-screen">Loading...</div>
       ) : (
         <div className="flex flex-col justify-center items-center m-auto gap-5 w-full lg:w-2/4 border-b-2 border-gray-500">
           {Array.isArray(posts) &&
