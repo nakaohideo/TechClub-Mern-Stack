@@ -21,7 +21,7 @@ const CreatePosts = () => {
     };
     setLoading(true);
     axios
-      .post("http://localhost:5000/Post", data)
+      .post("https://ctc-website-server-api.onrender.com/Post", data)
       .then(() => {
         setLoading(false);
         enqueueSnackbar("Post Created successfully", { variant: "success" });

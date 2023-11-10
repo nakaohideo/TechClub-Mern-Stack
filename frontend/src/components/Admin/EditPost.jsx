@@ -17,7 +17,7 @@ const EditPost = () => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/Post/${postId}`)
+      .get(`https://ctc-website-server-api.onrender.com/Post/${postId}`)
       .then((response) => {
         setPost(response.data);
         setLoading(false);
@@ -38,7 +38,7 @@ const EditPost = () => {
 
   const handleUpdatePost = () => {
     axios
-      .put(`http://localhost:5000/Post/${postId}`, post)
+      .put(`https://ctc-website-server-api.onrender.com/Post/${postId}`, post)
       .then(() => {
         enqueueSnackbar("Post updated successfully", { variant: "success" });
       })
@@ -51,7 +51,7 @@ const EditPost = () => {
   const handleDeletePost = () => {
     if (window.confirm("Are you sure you want to delete this post?")) {
       axios
-        .delete(`http://localhost:5000/Post/${postId}`)
+        .delete(`https://ctc-website-server-api.onrender.com/Post/${postId}`)
         .then(() => {
           enqueueSnackbar("Post deleted successfully", { variant: "success" });
           // Redirect to the post list or any other appropriate page
