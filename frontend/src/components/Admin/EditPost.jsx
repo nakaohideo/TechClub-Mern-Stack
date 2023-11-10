@@ -64,8 +64,10 @@ const EditPost = () => {
   };
 
   return (
-    <div className="p-4">
-      <h1 className="text-3xl my-4">Edit Post</h1>
+    <div className="p-4 h-screen w-10/12 m-auto">
+      <h1 className="text-3xl my-4 font-poppins font-bold text-center">
+        Edit Post
+      </h1>
       {loading ? (
         <div className="text-center">Loading...</div>
       ) : (
@@ -114,7 +116,7 @@ const EditPost = () => {
             />
           </div>
           <button className="p-2 bg-sky-300 m-4" onClick={handleUpdatePost}>
-            Save
+            Update
           </button>
           <button
             className="p-2 bg-red-500 text-white m-4"
@@ -122,7 +124,7 @@ const EditPost = () => {
           >
             Delete
           </button>
-          <Link to="/" className="text-blue-500 underline">
+          <Link to="/edit" className="text-blue-500 underline">
             Back to Posts
           </Link>
         </div>
